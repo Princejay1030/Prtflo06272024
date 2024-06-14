@@ -1,0 +1,62 @@
+.load-bg {
+    background-image: url(../../assets/img/Vector.svg);
+    width: 100%;
+    background-position: top center;
+    background-position-y: -2.9rem;
+    height: 100vh;
+    position: absolute;
+    top: -.25rem;
+    z-index: -999;
+    opacity: 0;
+    animation: opa-bg 7180ms ease-in-out;
+    -o-animation: opa-bg 7180ms ease-in-out;
+    -moz-animation: opa-bg 7180ms ease-in-out;
+    -webkit-animation: opa-bg 7180ms ease-in-out;
+}
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    animation: opa 7180ms linear;
+    animation: opa 7180ms linear;
+    -o-animation: opa 7180ms linear;
+    -moz-animation: opa 7180ms linear;
+    -webkit-animation: opa 7180ms linear;
+    opacity: 0;
+}
+
+.loading-lottie {
+    width: 200px;
+    height: 200px;
+}
+
+.t-lg-bold {
+    font-size: var(--t-lg);
+    font-weight: var(--fw-bold);
+    line-height: var(--t-lh-lg);
+}
+
+@keyframes opa-bg {
+    0% {
+        opacity: 0;
+    }
+    
+    50%, 100% {
+        opacity: 1;
+    }
+}
+
+@keyframes opa {
+    0% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}

@@ -1,0 +1,60 @@
+.disco-bg {
+    background-image: url(../../assets/img/Vector.svg);
+    width: 100%;
+    background-position: top center;
+    background-position-y: -2.9rem;
+    height: 100vh;
+    position: absolute;
+    top: -.25rem;
+    z-index: -999;
+    /* opacity: 0;
+    animation: opa-bg 7180ms ease-in-out;
+    -o-animation: opa-bg 7180ms ease-in-out;
+    -moz-animation: opa-bg 7180ms ease-in-out;
+    -webkit-animation: opa-bg 7180ms ease-in-out; */
+}
+
+.disco {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.disco .content {
+    max-width: 37rem;
+}
+
+.disco img {
+    max-width: 500px;
+    width: 100%;
+    margin-bottom: 1.5rem;
+}
+
+.disco .d-md-bold {
+    font-size: var(--d-md);
+    font-weight: var(--fw-black);
+    line-height: var(--d-lh-md);
+}
+
+.disco .t-xl-regular {
+    font-size: var(--t-xl);
+    font-weight: var(--fw-regular);
+    line-height: var(--t-lh-xl);
+}
+
+.disco .d-md-bold {
+    margin-bottom: .75rem;
+}
+
+@media screen and (min-width: 992px) {
+    .disco .d-md-bold {
+        font-size: var(--d-lg);
+        line-height: var(--d-lh-lg);
+    }
+
+    .disco .t-xl-regular {
+        font-size: var(--d-xs);
+        line-height: var(--d-lh-xs);
+    }
+}
