@@ -7,6 +7,7 @@ import NetStatus from '../src/pages/Disconnection/NetworkStatus';
 import Home from '../src/pages/Home/Home';
 import CursorAnimation from './Components/CursorAnimation/CursorAnimation';
 import { ReactLenis } from 'lenis/react';
+// import Test from '../src/pages/Test/Test'
 
 import './App.css';
 
