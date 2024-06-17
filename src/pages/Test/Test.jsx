@@ -1,7 +1,29 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import '../Test/Test.css';
 
 function Test() {
+    const [data, setData] = useState(null);
+    const [error, setError] = useState(null);
+  
+    useEffect(() => {
+      const fetchData = async () => {
+        try {
+          const response = await fetch('https://jsonplaceholder.typicode.com/posts');
+          if (!response.ok) {
+            throw new Error('Network response was not ok');
+          }
+          const result = await response.json();
+          setData(result);
+        } catch (error) {
+          setError(error.message);
+        }
+      };
+  
+      fetchData();
+    }, []);
+
+
+
     const [color, setColor] = useState('');
     const [searchQuery, setSearchQuery] = useState('');
     const [filteredProducts, setFilteredProducts] = useState([]);
@@ -43,6 +65,21 @@ function Test() {
                     ))}
                 </ul>
             </div>
+
+            <h1>Fetched Data</h1>
+      {error && <p>Error: {error}</p>}
+      {data ? (
+        <ul>
+          {data.map(post => (
+            <li key={post.id}>
+              <h2>{post.title}</h2>
+              <p>{post.body}</p>
+            </li>
+          ))}
+        </ul>
+      ) : (
+        <p>Loading...</p>
+      )}
         </div>
     );
 }

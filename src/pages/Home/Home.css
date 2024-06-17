@@ -1,8 +1,3 @@
-main {
-    position: relative;
-    padding-top: 5rem;
-}
-
 /* ========== Hero Section ========== */
 .bg {
     background-image: url(../../assets/img/Vector.svg);
@@ -315,24 +310,10 @@ main {
     background-position: top center;
     height: 1024px;
     position: absolute;
-    /* bottom: -5.6rem; */
     bottom: 0;
     z-index: -999;
     rotate: 180deg;
 }
-
-.hero .content,
-.hjd .content,
-.wm .content {
-    /* max-width: 30.5rem; */
-    /* width: 100%;
-    max-width: 500px; */
-}
-
-/* .content {
-    width: 100%;
-    max-width: 500px;
-} */
 
 @media screen and (min-width: 992px) {
     .top-space {
@@ -357,7 +338,6 @@ main {
     .db .content,
     .hjd .content,
     .wm .content {
-        /* max-width: 30.5rem; */
         max-width: 500px;
         width: 50%;
     }
@@ -398,10 +378,6 @@ main {
         -webkit-row-gap: 1.5rem;
     }
 
-    /* .cards .d-md-bold {
-        opacity: 0;
-    } */
-
     .cards {
         padding: 2rem;
     }
@@ -433,7 +409,8 @@ main {
         margin-bottom: 0;
     }
 
-    .cards:nth-child(2) {
+    .cards:nth-child(2),
+    .cards:nth-child(3) {
         flex: 1;
         -webkit-flex: 1;
     }
@@ -443,11 +420,6 @@ main {
         font-size: var(--d-md);
         font-weight: var(--fw-bold);
         line-height: var(--d-lh-md);
-    }
-
-    .cards:nth-child(3) {
-        flex: 1;
-        -webkit-flex: 1;
     }
 
     .ttm-container {

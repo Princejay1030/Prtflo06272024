@@ -23,7 +23,6 @@ function Navbar() {
 
   const handleLinkClick = () => {
     setMenuOpen(false);
-    console.log(ScrollLink);
   };
 
   useEffect(() => {

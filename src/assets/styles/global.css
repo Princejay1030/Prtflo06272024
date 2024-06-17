@@ -1,20 +1,16 @@
 * {
   -webkit-tap-highlight-color: transparent;
-  /* -webkit-font-smoothing: antialiased;
-  -webkit-text-size-adjust: 100%; */
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-size-adjust: 100%;
   cursor: url(../img/Cursor.svg), none;
   box-sizing: border-box;
   padding: 0;
   margin: 0;
-  /* text-rendering: optimizeSpeed;
-  image-rendering: optimizeSpeed; */
 }
 
 body {
     font-family: var(--ff);
     position: relative;
-    /* height: 100vh; */
-    /* -webkit-overflow-scrolling: touch; */
 }
 
 body::-webkit-scrollbar {
@@ -61,6 +57,11 @@ img {
 .wrapper {
     position: relative;
     animation: tbg 7180ms ease-out;
+}
+
+main {
+    position: relative;
+    padding-top: 5rem;
 }
   
 @keyframes tbg {

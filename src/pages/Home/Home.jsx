@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './Home.css';
+
 import Marquee from '../../Components/Marquee/Marquee';
 
 import gif1 from '../../assets/img/gif1.svg';
@@ -18,7 +20,6 @@ function Home() {
   return (
     <>
         <div className="bg"></div>
-        <main className='main'>
             {/* ========== Hero Section ========== */}
             <section className='sections top-space'>
                 <div className="containers hero">
@@ -74,7 +75,10 @@ function Home() {
                                 <p className="t-lg-regular">
                                     CliQQ is a mobile app designed for 7-Eleven shoppers. It offers a digital loyalty program, convenient payment options, and exclusive deals. Earn points, enjoy rewards, and make your 7-Eleven visits more rewarding with CliQQ.
                                 </p>
-                                <a href="#none" className='vp-btn'><p className='t-xl-medium'>View project</p></a>
+                                <Link to='/CliQQ' className='vp-btn'>
+                                    <p className='t-xl-medium'>View project</p>
+                                </Link>
+                                {/* <a href={CliQQ} className='vp-btn'><p className='t-xl-medium'>View project</p></a> */}
                             </div>
                         </div>
                         <div className="cards">
@@ -298,7 +302,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-        </main>
+ 
         <div className="bg2"></div>
     </>
   )
