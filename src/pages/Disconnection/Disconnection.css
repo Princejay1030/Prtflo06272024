@@ -7,11 +7,6 @@
     position: absolute;
     top: -.25rem;
     z-index: -999;
-    /* opacity: 0;
-    animation: opa-bg 7180ms ease-in-out;
-    -o-animation: opa-bg 7180ms ease-in-out;
-    -moz-animation: opa-bg 7180ms ease-in-out;
-    -webkit-animation: opa-bg 7180ms ease-in-out; */
 }
 
 .disco {
@@ -19,6 +14,12 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
+    -webkit-flex-direction: column;
+    -webkit-align-items: center;
+    -moz-flex-direction: column;
+    -moz-align-items: center;
+    -ms-flex-direction: column;
+    -ms-align-items: center;
 }
 
 .disco .content {
@@ -35,16 +36,13 @@
     font-size: var(--d-md);
     font-weight: var(--fw-black);
     line-height: var(--d-lh-md);
+    margin-bottom: .75rem;
 }
 
 .disco .t-xl-regular {
     font-size: var(--t-xl);
     font-weight: var(--fw-regular);
     line-height: var(--t-lh-xl);
-}
-
-.disco .d-md-bold {
-    margin-bottom: .75rem;
 }
 
 @media screen and (min-width: 992px) {

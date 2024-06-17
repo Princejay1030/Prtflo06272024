@@ -1,16 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { ReactLenis } from 'lenis/react';
+
+// Styles sheet
+import './App.css';
+
+// Components
 import Navbar from './Components/Navbar/Navbar';
 import Footer from './Components/Footer/Footer';
 import Loading from './Components/Loader/Loader';
+import CursorAnimation from './Components/CursorAnimation/CursorAnimation';
+
+// Pages
 import NetStatus from '../src/pages/Disconnection/NetworkStatus';
 import Home from '../src/pages/Home/Home';
 import CliQQ from '../src/pages/StudyCases/CliQQ';
-import CursorAnimation from './Components/CursorAnimation/CursorAnimation';
-import { ReactLenis } from 'lenis/react';
+
 // import Test from '../src/pages/Test/Test'
 
-import './App.css';
 
 function App() {
   const [isLoading, setisLoading] = useState(true);
@@ -26,12 +33,12 @@ function App() {
     setReloadKey(prevKey => prevKey + 1);
   };
 
-  try {
-    const test = handleReconnect;
-    console.log(test);
-  } catch (error) {
-    console.error('unable to connect', error)
-  }
+  // try {
+  //   const test = handleReconnect;
+  //   console.log(test);
+  // } catch (error) {
+  //   console.error('unable to connect', error)
+  // }
 
   if (isLoading) {
     return <Loading />;

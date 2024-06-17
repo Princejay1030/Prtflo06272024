@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import AnimatedCursor from 'react-animated-cursor';
-// import Cursor from '../../assets/img/Cursor.svg'
 
 function CursorAnimation() {
   const [isLargeScreen, setIsLargeScreen] = useState(window.innerWidth >= 992);

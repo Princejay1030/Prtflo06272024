@@ -1,6 +1,9 @@
 import React from 'react';
+
+// Styles sheet
 import './Footer.css';
 
+// Assets
 import Logo from '../../assets/img/Logo.svg';
 import behance from '../../assets/img/behance.svg';
 import linkedin from '../../assets/img/linkedin.svg';

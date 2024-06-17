@@ -26,16 +26,24 @@
     padding: 1rem;
     width: 100%;
     column-gap: 1rem;
+    -webkit-align-items: center;
+    -webkit-display: flex;
+    -webkit-justify-content: space-between;
+    -webkit-column-gap: 1rem;
 }
 
 .nav-logo-container {
     align-items: center;
     display: flex;
+    -webkit-align-items: center;
+    -webkit-display: flex;
 }
 
 .nav-logo-container a {
     display: flex;
     align-items: center;
+    -webkit-display: flex;
+    -webkit-align-items: center;
 }
 
 .menu-container {
@@ -52,9 +60,10 @@
     padding-top: 4rem;
     background-color: var(--clr-base-1);
     transition: all .4s ease-in-out;
-    /* Ensure the container is hidden initially */
+    -webkit-transition: all .4s ease-in-out;
+    -moz-transition: all .4s ease-in-out;
+    -o-transition: all .4s ease-in-out;
     visibility: hidden;
-    /* opacity: 0; */
     z-index: -999;
 }
 
@@ -62,10 +71,18 @@
     transform: translateY(0);
     visibility: visible;
     opacity: 1;
+    -webkit-transform: translateY(0);
+    -moz-transform: translateY(0);
+    -ms-transform: translateY(0);
+    -o-transform: translateY(0);
 }
 
 .menu-container.closed {
     transform: translateY(-100%);
+    -webkit-transform: translateY(-100%);
+    -moz-transform: translateY(-100%);
+    -ms-transform: translateY(-100%);
+    -o-transform: translateY(-100%);
 }
 
 .nav-list {
@@ -73,12 +90,11 @@
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    -webkit-flex-direction: column;
+    -webkit-gap: 1rem;
 }
 
 .nav-items {
-    /* padding: 1rem 1.25rem; */
-    /* transition: background-color 300ms ease-out;
-    border-radius: 1rem; */
     cursor: pointer;
 }
 
@@ -97,6 +113,9 @@
     font-weight: var(--fw-medium);
     line-height: var(--t-lh-xl);
     transition: background-color 300ms ease-out;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
     border-radius: 1rem;
     display: block;
 }
@@ -106,6 +125,9 @@
     color: var(--clr-base-1);
     border-radius: 1rem;
     transition: background-color 300ms ease-out;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
 }
 
 .getit .nav-links:hover {
@@ -116,7 +138,7 @@
     background-color: var(--clr-primary-8);
 }
 
-.getit .nav-links{
+.getit .nav-links {
     color: var(--clr-base-1);
 }
 
@@ -128,7 +150,7 @@
 }
 
 .close-menu {
-    display: none; 
+    display: none;
 }
 
 .menu-btn {
@@ -141,6 +163,9 @@
     cursor: pointer;
     padding: .75rem;
     transition: background-color 300ms ease-out;
+    -webkit-transition: background-color 300ms ease-out;
+    -moz-transition: background-color 300ms ease-out;
+    -o-transition: background-color 300ms ease-out;
 }
 
 .menu-btn:active {
@@ -155,13 +180,12 @@
     outline: none;
 }
 
-
 @media screen and (min-width: 992px) {
     .header {
         top: 1.5rem;
         padding-inline: 7rem;
     }
-    
+
     .nav {
         border: 1px solid var(--clr-gray-2);
         border-radius: 1rem;
@@ -172,7 +196,7 @@
         display: none;
     }
 
-    .menu-container{
+    .menu-container {
         display: flex;
         position: static;
         height: auto;
@@ -182,17 +206,29 @@
         width: 100%;
         z-index: 999;
         background-color: transparent;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -o-flex-direction: row;
     }
 
     .menu-container.closed {
         transform: translateY(0);
         z-index: 999;
         visibility: visible;
+        -webkit-transform: translateY(0);
+        -moz-transform: translateY(0);
+        -ms-transform: translateY(0);
+        -o-transform: translateY(0);
     }
 
     .nav-list {
         margin-left: auto;
         flex-direction: row;
+        -webkit-flex-direction: row;
+        -moz-flex-direction: row;
+        -ms-flex-direction: row;
+        -o-flex-direction: row;
     }
 
     .logo-link {

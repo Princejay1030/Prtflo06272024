@@ -1,7 +1,10 @@
-// Loading.js
 import React from 'react';
-import './Loader.css';
 import Lottie from 'lottie-react';
+
+// Styles sheet
+import './Loader.css';
+
+// Assets
 import loadingTest from '../../assets/img/loading.json';
 
 const Loading = () => {

@@ -1,13 +1,17 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+
+// Styles sheet
 import './Home.css';
 
+// Compnenents
 import Marquee from '../../Components/Marquee/Marquee';
 
-import gif1 from '../../assets/img/gif1.svg';
-import gif2 from '../../assets/img/gif2.svg';
-import gif3 from '../../assets/img/gif3.svg';
-import gif4 from '../../assets/img/gif4.svg';
+// Assets
+import illus1 from '../../assets/img/Illustration1.png';
+import illus2 from '../../assets/img/Illustration2.png';
+import illus3 from '../../assets/img/Illustration3.png';
+import illus4 from '../../assets/img/Illustration4.png';
 import avatar from '../../assets/img/Avatar.svg';
 import avatar1 from '../../assets/img/Avatar-1.svg';
 import avatar2 from '../../assets/img/Avatar-2.svg';
@@ -28,7 +32,7 @@ function Home() {
                         <p className='t-xl-regular'>I blend creativity with functionality in the digital world, crafting stories in every pixel with coffee-fueled energy. Let's create awesome experiences together! 🚀✨</p>
                     </div>
                     <div className="content">
-                        <img src={gif1} alt="" />
+                        <img src={illus1} alt="" />
                     </div>
                 </div>
             </section>
@@ -123,7 +127,7 @@ function Home() {
             <section className="sections" id='ab'>
                 <div className="containers db">
                     <div className="content">
-                        <img src={gif2} alt="" />
+                        <img src={illus2} alt="" />
                     </div>
                     <div className="content">
                         <div className="heading-and-text">
@@ -142,7 +146,7 @@ function Home() {
              <section className="sections">
                 <div className="containers wm">
                     <div className="content">
-                        <img src={gif3} alt="" />
+                        <img src={illus3} alt="" />
                     </div>
                     <div className="content">
                         <h3 className="d-md-bold">
@@ -159,7 +163,7 @@ function Home() {
             <section className="sections">
                 <div className="containers hjd">
                     <div className="content">
-                        <img src={gif4} alt="" />
+                        <img src={illus4} alt="" />
                     </div>
                     <div className="content">
                         <h3 className="d-md-bold">

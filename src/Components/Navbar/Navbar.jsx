@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
-import Cv from '../../assets/img/Cv2024.349ea563d441f8b475fb.pdf';
+
+// Styles sheet
 import './Navbar.css';
+
+// Assets
+import Cv from '../../assets/img/Cv2024.349ea563d441f8b475fb.pdf';
 import Logo from '../../assets/img/Logo.svg';
 import openMenuIcon from '../../assets/img/open-menu.svg';
 import closeMenuIcon from '../../assets/img/close-menu.svg';
