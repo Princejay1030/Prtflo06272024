@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback, lazy, Suspense } from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { ReactLenis } from 'lenis/react';
 
@@ -14,31 +14,27 @@ import CursorAnimation from './Components/CursorAnimation/CursorAnimation';
 // Pages
 import NetStatus from '../src/pages/Disconnection/NetworkStatus';
 import Home from '../src/pages/Home/Home';
-import CliQQ from '../src/pages/StudyCases/CliQQ';
+// import CliQQ from '../src/pages/StudyCases/CliQQ';
+// import Test from '../src/pages/Test/Test';
 
-// import Test from '../src/pages/Test/Test'
-
+const LazyCliQQ = lazy(() => import('../src/pages/StudyCases/CliQQ'));
 
 function App() {
-  const [isLoading, setisLoading] = useState(true);
+  const [isLoading, setIsLoading] = useState(true);
   const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
-    const timeout = setTimeout(() => { setisLoading(false); }, 7180);
+    // Fake loading duration to simulate fetching time
+    const timeout = setTimeout(() => {
+      setIsLoading(false);
+    }, 7180);
     return () => clearTimeout(timeout);
   }, [reloadKey]);
 
-  const handleReconnect = () => {
-    setisLoading(true);
+  const handleReconnect = useCallback(() => {
+    setIsLoading(true);
     setReloadKey(prevKey => prevKey + 1);
-  };
-
-  // try {
-  //   const test = handleReconnect;
-  //   console.log(test);
-  // } catch (error) {
-  //   console.error('unable to connect', error)
-  // }
+  }, []);
 
   if (isLoading) {
     return <Loading />;
@@ -48,28 +44,24 @@ function App() {
     <Router>
       <NetStatus onReconnect={handleReconnect}>
         <div className="wrapper" id="wrapper">
-          <ReactLenis root options={{ orientation: "vertical" }}>
+          <ReactLenis root options={{ orientation: "both", easing: "easeInOutCubic" }}>
 
-            <Navbar />
-            <CursorAnimation />
+            <Suspense fallback={<Loading />}>
+              <Navbar />
+              <CursorAnimation />
 
+                <Routes>
+                  <Route path="/" element={<Home />} />
+                  <Route path="/CliQQ" element={<LazyCliQQ />} />
+                  {/* <Route path="/Test" element={<Test />} /> */}
+                </Routes>
 
-            <main>
-              <Routes>
-                <Route path="/" element={<Home />} />
-                <Route path="/CliQQ" element={<CliQQ />} />
-              </Routes>
-            </main>
-
-            <Footer />
+              <Footer />
+            </Suspense>
           </ReactLenis>
-
-          {/* <Test /> */}
-
         </div>
       </NetStatus>
     </Router>
-
   );
 }
 

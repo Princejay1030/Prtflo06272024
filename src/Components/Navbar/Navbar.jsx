@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useCallback } from 'react';
 import { Link } from 'react-router-dom';
 import { Link as ScrollLink, animateScroll as scroll } from 'react-scroll';
 
@@ -20,14 +20,31 @@ function Navbar() {
 
   const [menuOpen, setMenuOpen] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [isVisible, setIsVisible] = useState(true);
 
-  const toggleMenu = () => {
+  const toggleMenu = useCallback(() => {
     setMenuOpen(!menuOpen);
-  };
+  }, [menuOpen]);
 
   const handleLinkClick = () => {
     setMenuOpen(false);
   };
+
+  const handleScroll = () => {
+    let currentScrollTop = window.scrollY;
+    if (currentScrollTop > 300) {
+      setIsVisible(false);
+    } else {
+      setIsVisible(true);
+    }
+  };
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
 
   useEffect(() => {
     const handleResize = () => {
@@ -39,23 +56,24 @@ function Navbar() {
     };
 
     handleResize();
-
     window.addEventListener('resize', handleResize);
-    
-    setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
-    
+
     return () => {
       window.removeEventListener('resize', handleResize);
       document.body.style.overflow = 'auto';
     };
   }, [menuOpen]);
 
+  useEffect(() => {
+    setIsMobile(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent));
+  }, []);
+
   return (
-    <header className="header">
-      <nav className="nav">
+    <header className={`header ${isVisible ? 'visible' : 'hidden'}`}>
+      <nav className={`nav  ${isVisible ? '' : 'scroll'}`}>
         <div className="nav-container">
           <div className="nav-logo-container">
-            <Link to="/" className="logo-link" onClick={() => scroll.scrollToTop()}>
+            <Link to="/" className="logo-link" onClick={() => scroll.scrollToTop(0, 0)}>
               <img src={Logo} alt="Logo" />
             </Link>
           </div>

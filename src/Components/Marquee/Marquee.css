@@ -18,7 +18,7 @@
   -webkit-animation: marquee 100s linear infinite; /* WebKit */
   -moz-animation: marquee 100s linear infinite;    /* Mozilla */
   -ms-animation: marquee 100s linear infinite;     /* Microsoft */
-  gap: 23.1rem;
+  /* gap: 23.1rem; */
   -webkit-display: flex;
   -moz-display: flex;
   -ms-display: flex;
@@ -49,6 +49,8 @@
 
 .marquee img {
   width: 100%;
+  min-width: 40px;
+  max-width: 40px;
 }
 
 @keyframes marquee {

@@ -1,17 +1,21 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { animateScroll as scroll } from 'react-scroll';
+import AOS from 'aos';
 
 // Styles sheet
 import './Home.css';
+import 'aos/dist/aos.css';
 
 // Compnenents
 import Marquee from '../../Components/Marquee/Marquee';
+import ImageLoading from '../../Components/ImageWithLoading/ImageLoading';
 
 // Assets
-import illus1 from '../../assets/img/Illustration1.png';
-import illus2 from '../../assets/img/Illustration2.png';
-import illus3 from '../../assets/img/Illustration3.png';
-import illus4 from '../../assets/img/Illustration4.png';
+import illus1 from '../../assets/img/Illustration1.svg';
+import illus2 from '../../assets/img/Illustration2.svg';
+import illus3 from '../../assets/img/Illustration3.svg';
+import illus4 from '../../assets/img/Illustration4.svg';
 import avatar from '../../assets/img/Avatar.svg';
 import avatar1 from '../../assets/img/Avatar-1.svg';
 import avatar2 from '../../assets/img/Avatar-2.svg';
@@ -21,24 +25,52 @@ import avatar5 from '../../assets/img/Avatar-5.svg';
 import arrowDown from '../../assets/img/Polygon.svg';
 
 function Home() {
+    AOS.init({
+
+        // Global settings:
+        disable: function () {
+            var minWidth = 714;
+            return window.innerWidth < minWidth;
+          }, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
+        initClassName: 'aos-init', // class applied after initialization
+        animatedClassName: 'aos-animate', // class applied on animation
+        useClassNames: false, // if true, will add content of `data-aos` as classes on scroll
+        disableMutationObserver: false, // disables automatic mutations' detections (advanced)
+        debounceDelay: 0, // the delay on debounce used while resizing window (advanced)
+        throttleDelay: 99, // the delay on throttle used while scrolling the page (advanced)
+        
+
+        // Settings that can be overridden on per-element basis, by `data-aos-*` attributes:
+        offset: 120, // offset (in px) from the original trigger point
+        delay: 0, // values from 0 to 1300, with step 50ms
+        duration: 3000, // values from 0 to 1300, with step 50ms
+        easing: 'ease-out', // default easing for AOS animations
+        once: true, // whether animation should happen only once - while scrolling down
+        mirror: false, // whether elements should animate out while scrolling past them
+        anchorPlacement: 'bottom', // defines which position of the element regarding to window should trigger the animation
+    });
+
   return (
     <>
         <div className="bg"></div>
+        <main>
             {/* ========== Hero Section ========== */}
             <section className='sections top-space'>
                 <div className="containers hero">
-                    <div className="content">
+                    <div className="content" data-aos="fade-up" data-aos-duration="1000">
                         <h1 className='d-md-bold'>Yow, I’m Jayvin!</h1>
                         <p className='t-xl-regular'>I blend creativity with functionality in the digital world, crafting stories in every pixel with coffee-fueled energy. Let's create awesome experiences together! 🚀✨</p>
                     </div>
-                    <div className="content">
-                        <img src={illus1} alt="" />
+                    <div className="content" data-aos="fade-up" data-aos-duration="1300">
+                        <ImageLoading src={illus1} alt="Illustration" />
+                        {/* <img src={illus1} alt="Illustration" loading='lazy' /> */}
                     </div>
                 </div>
             </section>
 
-           <section className="sections">
-                <div className="mq-container">
+            <section className="sections">
+                <div className="mq-container" data-aos="fade-up" data-aos-duration="1300">
                     <div className="content mq">
                         <Marquee />
                     </div>
@@ -46,16 +78,16 @@ function Home() {
                     <div className="content t-i">
                         <p className="t-xl-bold">Scroll Down</p>
                         <div>
-                            <img src={arrowDown} alt="" />
+                            <img src={arrowDown} alt="arrow-down" />
                         </div>
                     </div>
                 </div>
-           </section>
+            </section>
 
             {/* ========== Featured Project Section ========== */}
             <section className='sections' id='fw'>
                 <div className="containers fp">
-                    <div className="heading-and-text">
+                    <div className="heading-and-text" data-aos="fade-up" data-aos-duration="1000">
                         <h3 className='d-md-bold'>
                             Featured Projects
                         </h3>
@@ -65,7 +97,7 @@ function Home() {
                     </div>
 
                     <div className="cards-container">
-                        <div className="cards">
+                        <div className="cards" data-aos="fade-up" data-aos-duration="1300">
                             <div className="card-image"></div>
                             <div className="card-details">
                                 <div className="chip">
@@ -79,13 +111,13 @@ function Home() {
                                 <p className="t-lg-regular">
                                     CliQQ is a mobile app designed for 7-Eleven shoppers. It offers a digital loyalty program, convenient payment options, and exclusive deals. Earn points, enjoy rewards, and make your 7-Eleven visits more rewarding with CliQQ.
                                 </p>
-                                <Link to='/CliQQ' className='vp-btn'>
+                                <Link to='/CliQQ' className='vp-btn' onClick={() => scroll.scrollToTop(0, 0)}>
                                     <p className='t-xl-medium'>View project</p>
                                 </Link>
                                 {/* <a href={CliQQ} className='vp-btn'><p className='t-xl-medium'>View project</p></a> */}
                             </div>
                         </div>
-                        <div className="cards">
+                        <div className="cards" data-aos="fade-up" data-aos-duration="1000">
                             <div className="card-image"></div>
                             <div className="card-details">
                                 <div className="chip chip-green">
@@ -99,10 +131,12 @@ function Home() {
                                 <p className="t-lg-regular">
                                     CliQQ is a mobile app designed for 7-Eleven shoppers. It offers a digital loyalty program, convenient payment options, and exclusive deals. Earn points, enjoy rewards, and make your 7-Eleven visits more rewarding with CliQQ.
                                 </p>
-                                <a href="#none" className='vp-btn'><p className='t-xl-medium'>View project</p></a>
+                                <Link to='/Test' className='vp-btn' onClick={() => scroll.scrollToTop(0, 0)}>
+                                    <p className='t-xl-medium'>View project</p>
+                                </Link>
                             </div>
                         </div>
-                        <div className="cards">
+                        <div className="cards" data-aos="fade-up" data-aos-duration="1300">
                             <div className="card-image"></div>
                             <div className="card-details">
                                 <div className="chip chip-orange">
@@ -126,10 +160,10 @@ function Home() {
             {/* ========== Design and Beyond Section ========== */}
             <section className="sections" id='ab'>
                 <div className="containers db">
-                    <div className="content">
-                        <img src={illus2} alt="" />
+                    <div className="content" data-aos="fade-up" data-aos-duration="1000">
+                        <img src={illus2} alt="Illustration" loading='lazy' />
                     </div>
-                    <div className="content">
+                    <div className="content" data-aos="fade-up" data-aos-duration="1300">
                         <div className="heading-and-text">
                             <h3 className="d-md-bold">
                                 Design and Beyond
@@ -142,13 +176,13 @@ function Home() {
                 </div>
             </section>
 
-             {/* ========== Harmony of Jazz and Design Section ========== */}
-             <section className="sections">
+            {/* ========== Harmony of Jazz and Design Section ========== */}
+            <section className="sections">
                 <div className="containers wm">
-                    <div className="content">
-                        <img src={illus3} alt="" />
+                    <div className="content" data-aos="fade-up" data-aos-duration="1000">
+                        <img src={illus3} alt="Illustration" loading='lazy' />
                     </div>
-                    <div className="content">
+                    <div className="content" data-aos="fade-up" data-aos-duration="1300">
                         <h3 className="d-md-bold">
                             Harmony of Jazz and Design
                         </h3>
@@ -162,10 +196,10 @@ function Home() {
             {/* ========== Work with Me Section ========== */}
             <section className="sections">
                 <div className="containers hjd">
-                    <div className="content">
-                        <img src={illus4} alt="" />
+                    <div className="content" data-aos="fade-up" data-aos-duration="1000">
+                        <img src={illus4} alt="Illustration" loading='lazy' />
                     </div>
-                    <div className="content">
+                    <div className="content" data-aos="fade-up" data-aos-duration="1300">
                         <h3 className="d-md-bold">
                             Why Work With Me
                         </h3>
@@ -179,7 +213,7 @@ function Home() {
             {/* ========== Testimonial Section ========== */}
             <section className="sections">
                 <div className="containers ttm">
-                    <div className="content">
+                    <div className="content" data-aos="fade-up" data-aos-duration="1000">
                         <h3 className="d-md-bold">
                             Testimonial
                         </h3>
@@ -188,9 +222,9 @@ function Home() {
                         </p>
                     </div>
                     <div className="content ttm-container">
-                        <div className="ttm-cards">
+                        <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1000">
                             <div className="an">
-                                <img src={avatar} alt="" />
+                                <img src={avatar} alt="Avatar" />
                                 <div className="np">
                                     <h6 className="d-xs-bold">
                                         Leira Ubiña
@@ -207,9 +241,9 @@ function Home() {
                             </div>
                         </div>
                         <div className="ttm-container-1">
-                            <div className="ttm-cards">
+                            <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1000">
                                 <div className="an">
-                                    <img src={avatar1} alt="" />
+                                    <img src={avatar1} alt="Avatar" />
                                     <div className="np">
                                         <h6 className="d-xs-bold">
                                             Kim Medina
@@ -225,10 +259,10 @@ function Home() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="ttm-inner-container-2">
+                            <div className="ttm-inner-container-2" data-aos="fade-up" data-aos-duration="1300">
                                 <div className="ttm-cards">
                                     <div className="an">
-                                        <img src={avatar2} alt="" />
+                                        <img src={avatar2} alt="Avatar" />
                                         <div className="np">
                                             <h6 className="d-xs-bold">
                                                 Trisha Quinto
@@ -246,7 +280,7 @@ function Home() {
                                 </div>
                                 <div className="ttm-cards">
                                     <div className="an">
-                                        <img src={avatar3} alt="" />
+                                        <img src={avatar3} alt="Avatar" />
                                         <div className="np">
                                             <h6 className="d-xs-bold">
                                                 Dar Soriano
@@ -266,9 +300,9 @@ function Home() {
                         </div>
                         <div className="ttm-container-2">
 
-                            <div className="ttm-cards">
+                            <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1000">
                                 <div className="an">
-                                    <img src={avatar4} alt="" />
+                                    <img src={avatar4} alt="Avatar" />
                                     <div className="np">
                                         <h6 className="d-xs-bold">
                                             Krunal Ramoliya
@@ -284,9 +318,9 @@ function Home() {
                                     </p>
                                 </div>
                             </div>
-                            <div className="ttm-cards">
+                            <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1300">
                                 <div className="an">
-                                    <img src={avatar5} alt="" />
+                                    <img src={avatar5} alt="Avatar" />
                                     <div className="np">
                                         <h6 className="d-xs-bold">
                                             Michael Rae Daabay
@@ -306,6 +340,8 @@ function Home() {
                     </div>
                 </div>
             </section>
+            
+        </main>
  
         <div className="bg2"></div>
     </>

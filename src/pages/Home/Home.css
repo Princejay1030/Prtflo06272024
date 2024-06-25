@@ -1,5 +1,5 @@
 /* ========== Hero Section ========== */
-.bg {
+/* .bg {
     background-image: url(../../assets/img/Vector.svg);
     width: 100%;
     background-position-x: 5rem;
@@ -8,7 +8,7 @@
     position: absolute;
     top: -3.1rem;
     z-index: -999;
-}
+} */
 
 .hero,
 .hjd,
@@ -378,7 +378,7 @@
     margin-bottom: .25rem;
 }
 
-.bg2 {
+/* .bg2 {
     background-image: linear-gradient(rgba(255, 255, 255, 15.36%), rgb(255, 255, 255)), url(../../assets/img/Vector.svg);
     width: 100%;
     background-position-x: 5rem;
@@ -388,7 +388,7 @@
     bottom: 0;
     z-index: -999;
     rotate: 180deg;
-}
+} */
 
 @media screen and (min-width: 992px) {
     .top-space {
@@ -429,6 +429,15 @@
     .wm .content {
         max-width: 500px;
         width: 50%;
+        height: 500px;
+    }
+
+    .hero .content,
+    .hjd .content,
+    .wm .content {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
     }
 
     .d-md-bold {
@@ -534,7 +543,7 @@
 
     .ttm-container {
         flex-direction: column;
-        overflow-x: hidden;
+        overflow: hidden;
         padding-bottom: 0;
         -webkit-flex-direction: column;
         -moz-flex-direction: column;

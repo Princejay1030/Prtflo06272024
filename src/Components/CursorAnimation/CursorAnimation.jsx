@@ -38,7 +38,9 @@ function CursorAnimation() {
             'select',
             'textarea',
             'button',
-            '.link'
+            '.link',
+            '.lb-img',
+            '.vp-btn'
           ]}
         />
       )}
