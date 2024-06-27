@@ -5,7 +5,7 @@ import Lottie from 'lottie-react';
 import './Loader.css';
 
 // Assets
-import loadingTest from '../../assets/img/loading.json';
+import LoadingAni from '../../assets/img/Loading.json';
 
 const Loading = () => {
     return (
@@ -13,7 +13,7 @@ const Loading = () => {
             <div className="load-bg"></div>
             <div className='loading-container'>
                 <Lottie 
-                    animationData={loadingTest} 
+                    animationData={LoadingAni} 
                     loop={true} 
                     width={50}
                     height={50} 

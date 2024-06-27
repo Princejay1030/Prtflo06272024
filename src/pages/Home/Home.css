@@ -1,15 +1,4 @@
 /* ========== Hero Section ========== */
-/* .bg {
-    background-image: url(../../assets/img/Vector.svg);
-    width: 100%;
-    background-position-x: 5rem;
-    background-position: top center;
-    height: 1024px;
-    position: absolute;
-    top: -3.1rem;
-    z-index: -999;
-} */
-
 .hero,
 .hjd,
 .wm {
@@ -378,18 +367,6 @@
     margin-bottom: .25rem;
 }
 
-/* .bg2 {
-    background-image: linear-gradient(rgba(255, 255, 255, 15.36%), rgb(255, 255, 255)), url(../../assets/img/Vector.svg);
-    width: 100%;
-    background-position-x: 5rem;
-    background-position: top center;
-    height: 1024px;
-    position: absolute;
-    bottom: 0;
-    z-index: -999;
-    rotate: 180deg;
-} */
-
 @media screen and (min-width: 992px) {
     .top-space {
         padding-top: 5.6rem;
@@ -506,6 +483,7 @@
         -ms-align-items: flex-end;
         -ms-flex-direction: row-reverse;
         -ms-justify-content: space-between;
+        column-gap: 2rem;
     }
 
     .cards:nth-child(1) .card-details {

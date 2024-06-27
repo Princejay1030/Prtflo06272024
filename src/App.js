@@ -13,21 +13,19 @@ import CursorAnimation from './Components/CursorAnimation/CursorAnimation';
 
 // Pages
 import NetStatus from '../src/pages/Disconnection/NetworkStatus';
-import Home from '../src/pages/Home/Home';
-// import CliQQ from '../src/pages/StudyCases/CliQQ';
 // import Test from '../src/pages/Test/Test';
-
-const LazyCliQQ = lazy(() => import('../src/pages/StudyCases/CliQQ'));
+const Home = lazy(() => import('../src/pages/Home/Home'));
+const CliQQ = lazy(() => import('../src/pages/StudyCases/CliQQ'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
   const [reloadKey, setReloadKey] = useState(0);
 
   useEffect(() => {
-    // Fake loading duration to simulate fetching time
     const timeout = setTimeout(() => {
       setIsLoading(false);
     }, 7180);
+
     return () => clearTimeout(timeout);
   }, [reloadKey]);
 
@@ -51,10 +49,11 @@ function App() {
               <CursorAnimation />
 
                 <Routes>
-                  <Route path="/" element={<Home />} />
-                  <Route path="/CliQQ" element={<LazyCliQQ />} />
+                  <Route path="/" index element={<Home />} />
+                  <Route path="/CliQQ" element={<CliQQ />} />
                   {/* <Route path="/Test" element={<Test />} /> */}
                 </Routes>
+                
 
               <Footer />
             </Suspense>

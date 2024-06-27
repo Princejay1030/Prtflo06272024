@@ -40,7 +40,8 @@ function CursorAnimation() {
             'button',
             '.link',
             '.lb-img',
-            '.vp-btn'
+            '.vp-btn',
+            '.iframe'
           ]}
         />
       )}

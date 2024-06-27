@@ -22,10 +22,10 @@
     height: 100vh;
     flex-direction: column;
     animation: opa 7180ms linear;
-    -webkit-animation: opa 7180ms linear; /* WebKit */
-    -moz-animation: opa 7180ms linear;    /* Mozilla */
-    -ms-animation: opa 7180ms linear;     /* Microsoft */
-    -o-animation: opa 7180ms linear;      /* Opera */
+    -webkit-animation: opa 7180ms linear;
+    -moz-animation: opa 7180ms linear;
+    -ms-animation: opa 7180ms linear;
+    -o-animation: opa 7180ms linear;
     opacity: 0;
     -webkit-display: flex;
     -moz-display: flex;

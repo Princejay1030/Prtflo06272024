@@ -10,28 +10,27 @@ import 'aos/dist/aos.css';
 // Compnenents
 import Marquee from '../../Components/Marquee/Marquee';
 import ImageLoading from '../../Components/ImageWithLoading/ImageLoading';
+import PageTransition from '../../Components/PageTransition/PageTransition';
 
 // Assets
-import illus1 from '../../assets/img/Illustration1.svg';
-import illus2 from '../../assets/img/Illustration2.svg';
-import illus3 from '../../assets/img/Illustration3.svg';
-import illus4 from '../../assets/img/Illustration4.svg';
-import avatar from '../../assets/img/Avatar.svg';
-import avatar1 from '../../assets/img/Avatar-1.svg';
-import avatar2 from '../../assets/img/Avatar-2.svg';
-import avatar3 from '../../assets/img/Avatar-3.svg';
-import avatar4 from '../../assets/img/Avatar-4.svg';
-import avatar5 from '../../assets/img/Avatar-5.svg';
-import arrowDown from '../../assets/img/Polygon.svg';
+import Illus1 from '../../assets/img/Illustration1.svg';
+import Illus2 from '../../assets/img/Illustration2.svg';
+import Illus3 from '../../assets/img/Illustration3.svg';
+import Illus4 from '../../assets/img/Illustration4.svg';
+import Avatar1 from '../../assets/img/Avatar1.svg';
+import Avatar2 from '../../assets/img/Avatar2.svg';
+import Avatar3 from '../../assets/img/Avatar3.svg';
+import Avatar4 from '../../assets/img/Avatar4.svg';
+import Avatar5 from '../../assets/img/Avatar5.svg';
+import Avatar6 from '../../assets/img/Avatar6.svg';
+import ArrowDown from '../../assets/img/Polygon.svg';
+import Cover from '../../assets/img/Cover.jpg';
 
 function Home() {
     AOS.init({
 
         // Global settings:
-        disable: function () {
-            var minWidth = 714;
-            return window.innerWidth < minWidth;
-          }, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
+        disable: false, // accepts following values: 'phone', 'tablet', 'mobile', boolean, expression or function
         startEvent: 'DOMContentLoaded', // name of the event dispatched on the document, that AOS should initialize on
         initClassName: 'aos-init', // class applied after initialization
         animatedClassName: 'aos-animate', // class applied on animation
@@ -50,9 +49,12 @@ function Home() {
         mirror: false, // whether elements should animate out while scrolling past them
         anchorPlacement: 'bottom', // defines which position of the element regarding to window should trigger the animation
     });
+    
+
 
   return (
     <>
+        <PageTransition />
         <div className="bg"></div>
         <main>
             {/* ========== Hero Section ========== */}
@@ -63,8 +65,7 @@ function Home() {
                         <p className='t-xl-regular'>I blend creativity with functionality in the digital world, crafting stories in every pixel with coffee-fueled energy. Let's create awesome experiences together! 🚀✨</p>
                     </div>
                     <div className="content" data-aos="fade-up" data-aos-duration="1300">
-                        <ImageLoading src={illus1} alt="Illustration" />
-                        {/* <img src={illus1} alt="Illustration" loading='lazy' /> */}
+                        <ImageLoading src={Illus1} alt="Illustration" />
                     </div>
                 </div>
             </section>
@@ -78,7 +79,7 @@ function Home() {
                     <div className="content t-i">
                         <p className="t-xl-bold">Scroll Down</p>
                         <div>
-                            <img src={arrowDown} alt="arrow-down" />
+                            <img src={ArrowDown} alt="arrow-down" />
                         </div>
                     </div>
                 </div>
@@ -98,7 +99,8 @@ function Home() {
 
                     <div className="cards-container">
                         <div className="cards" data-aos="fade-up" data-aos-duration="1300">
-                            <div className="card-image"></div>
+                            <img src={Cover} alt="Screen" className="card-image" />
+                            {/* <div className="card-image"></div> */}
                             <div className="card-details">
                                 <div className="chip">
                                     <p className="t-sm-medium">
@@ -111,7 +113,7 @@ function Home() {
                                 <p className="t-lg-regular">
                                     CliQQ is a mobile app designed for 7-Eleven shoppers. It offers a digital loyalty program, convenient payment options, and exclusive deals. Earn points, enjoy rewards, and make your 7-Eleven visits more rewarding with CliQQ.
                                 </p>
-                                <Link to='/CliQQ' className='vp-btn' onClick={() => scroll.scrollToTop(0, 0)}>
+                                <Link to='CliQQ' className='vp-btn' onClick={() => scroll.scrollToTop(0)}>
                                     <p className='t-xl-medium'>View project</p>
                                 </Link>
                                 {/* <a href={CliQQ} className='vp-btn'><p className='t-xl-medium'>View project</p></a> */}
@@ -131,9 +133,7 @@ function Home() {
                                 <p className="t-lg-regular">
                                     CliQQ is a mobile app designed for 7-Eleven shoppers. It offers a digital loyalty program, convenient payment options, and exclusive deals. Earn points, enjoy rewards, and make your 7-Eleven visits more rewarding with CliQQ.
                                 </p>
-                                <Link to='/Test' className='vp-btn' onClick={() => scroll.scrollToTop(0, 0)}>
-                                    <p className='t-xl-medium'>View project</p>
-                                </Link>
+                                <a href="#none" className='vp-btn'><p className='t-xl-medium'>View project</p></a>
                             </div>
                         </div>
                         <div className="cards" data-aos="fade-up" data-aos-duration="1300">
@@ -161,7 +161,7 @@ function Home() {
             <section className="sections" id='ab'>
                 <div className="containers db">
                     <div className="content" data-aos="fade-up" data-aos-duration="1000">
-                        <img src={illus2} alt="Illustration" loading='lazy' />
+                        <img src={Illus2} alt="Illustration" />
                     </div>
                     <div className="content" data-aos="fade-up" data-aos-duration="1300">
                         <div className="heading-and-text">
@@ -180,7 +180,7 @@ function Home() {
             <section className="sections">
                 <div className="containers wm">
                     <div className="content" data-aos="fade-up" data-aos-duration="1000">
-                        <img src={illus3} alt="Illustration" loading='lazy' />
+                        <img src={Illus3} alt="Illustration" />
                     </div>
                     <div className="content" data-aos="fade-up" data-aos-duration="1300">
                         <h3 className="d-md-bold">
@@ -197,7 +197,7 @@ function Home() {
             <section className="sections">
                 <div className="containers hjd">
                     <div className="content" data-aos="fade-up" data-aos-duration="1000">
-                        <img src={illus4} alt="Illustration" loading='lazy' />
+                        <img src={Illus4} alt="Illustration" />
                     </div>
                     <div className="content" data-aos="fade-up" data-aos-duration="1300">
                         <h3 className="d-md-bold">
@@ -224,7 +224,7 @@ function Home() {
                     <div className="content ttm-container">
                         <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1000">
                             <div className="an">
-                                <img src={avatar} alt="Avatar" />
+                                <img src={Avatar1} alt="Avatar" />
                                 <div className="np">
                                     <h6 className="d-xs-bold">
                                         Leira Ubiña
@@ -243,7 +243,7 @@ function Home() {
                         <div className="ttm-container-1">
                             <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1000">
                                 <div className="an">
-                                    <img src={avatar1} alt="Avatar" />
+                                    <img src={Avatar2} alt="Avatar" />
                                     <div className="np">
                                         <h6 className="d-xs-bold">
                                             Kim Medina
@@ -262,7 +262,7 @@ function Home() {
                             <div className="ttm-inner-container-2" data-aos="fade-up" data-aos-duration="1300">
                                 <div className="ttm-cards">
                                     <div className="an">
-                                        <img src={avatar2} alt="Avatar" />
+                                        <img src={Avatar3} alt="Avatar" />
                                         <div className="np">
                                             <h6 className="d-xs-bold">
                                                 Trisha Quinto
@@ -280,7 +280,7 @@ function Home() {
                                 </div>
                                 <div className="ttm-cards">
                                     <div className="an">
-                                        <img src={avatar3} alt="Avatar" />
+                                        <img src={Avatar4} alt="Avatar" />
                                         <div className="np">
                                             <h6 className="d-xs-bold">
                                                 Dar Soriano
@@ -302,7 +302,7 @@ function Home() {
 
                             <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1000">
                                 <div className="an">
-                                    <img src={avatar4} alt="Avatar" />
+                                    <img src={Avatar5} alt="Avatar" />
                                     <div className="np">
                                         <h6 className="d-xs-bold">
                                             Krunal Ramoliya
@@ -320,7 +320,7 @@ function Home() {
                             </div>
                             <div className="ttm-cards" data-aos="fade-up" data-aos-duration="1300">
                                 <div className="an">
-                                    <img src={avatar5} alt="Avatar" />
+                                    <img src={Avatar6} alt="Avatar" />
                                     <div className="np">
                                         <h6 className="d-xs-bold">
                                             Michael Rae Daabay
@@ -340,9 +340,7 @@ function Home() {
                     </div>
                 </div>
             </section>
-            
         </main>
- 
         <div className="bg2"></div>
     </>
   )

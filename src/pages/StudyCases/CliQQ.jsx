@@ -1,45 +1,59 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import '../StudyCases/SCmain.css';
 
 import LightBox from '../../Components/LightBox/LightBox';
+import PageTransition from '../../Components/PageTransition/PageTransition';
 
-import cliqqimg1 from '../../assets/img/cliqqimg1.png';
-import cliqqimg2 from '../../assets/img/cliqqimg2.png';
-import cliqqimg3 from '../../assets/img/cliqqimg3.png';
-import cliqqimg4 from '../../assets/img/cliqqimg4.png';
-import cliqqimg5 from '../../assets/img/cliqqimg5.png';
-import cliqqimg6 from '../../assets/img/cliqqimg6.png';
-import cliqqimg7 from '../../assets/img/cliqqimg7.png';
-import cliqqimg8 from '../../assets/img/cliqqimg8.png';
-import icon1 from '../../assets/img/Icon1.png';
-import icon2 from '../../assets/img/Icon2.png';
-import icon3 from '../../assets/img/Icon3.png';
-import icon4 from '../../assets/img/Icon4.png';
-import iphone13 from '../../assets/img/iPhone13.png';
-import iphone16 from '../../assets/img/iPhone16.png';
-import iphone17 from '../../assets/img/iPhone17.png';
-import screens from '../../assets/img/Screens.png';
+import Cliqqimg1 from '../../assets/img/Cliqqimg1.png';
+import Cliqqimg2 from '../../assets/img/Cliqqimg2.png';
+import Cliqqimg3 from '../../assets/img/Cliqqimg3.png';
+import Cliqqimg4 from '../../assets/img/Cliqqimg4.png';
+import Cliqqimg5 from '../../assets/img/Cliqqimg5.png';
+import Cliqqimg6 from '../../assets/img/Cliqqimg6.png';
+import Cliqqimg7 from '../../assets/img/Cliqqimg7.png';
+import Cliqqimg8 from '../../assets/img/Cliqqimg8.png';
+import Icon1 from '../../assets/img/Icon1.png';
+import Icon2 from '../../assets/img/Icon2.png';
+import Icon3 from '../../assets/img/Icon3.png';
+import Icon4 from '../../assets/img/Icon4.png';
+import Iphone1 from '../../assets/img/Iphone1.png';
+import Iphone2 from '../../assets/img/Iphone2.png';
+import Iphone3 from '../../assets/img/Iphone3.png';
+import Screen1 from '../../assets/img/Screen1.png';
+import Screen2 from '../../assets/img/Screen2.png';
+import Screen3 from '../../assets/img/Screen3.png';
+import Screen4 from '../../assets/img/Screen4.png';
+import Screen5 from '../../assets/img/Screen5.png';
+import Screen6 from '../../assets/img/Screen6.png';
+import Screen7 from '../../assets/img/Screen7.png';
+import Screen8 from '../../assets/img/Screen8.png';
+import Screen9 from '../../assets/img/Screen9.png';
+import Screen10 from '../../assets/img/Screen10.png';
+import Screen11 from '../../assets/img/Screen11.png';
+import Screen12 from '../../assets/img/Screen12.png';
+import Screen13 from '../../assets/img/Screen13.png';
+import Screen14 from '../../assets/img/Screen14.png';
+import Screen15 from '../../assets/img/Screen15.png';
 
 function CliQQ() {
   const [isLightboxOpen, setIsLightboxOpen] = useState(false);
   const [lightboxImage, setLightboxImage] = useState('');
 
-  useEffect(() => {
-    isLightboxOpen ? document.body.style.overflow ='hidden' : document.body.style.overflow ='auto'
-  }, [isLightboxOpen])
-
   const handleLightboxOpen = (image) => {
     setLightboxImage(image);
     setIsLightboxOpen(true);
+    document.body.style.overflow ='hidden' 
   }
 
   const handleCloseLightbox = () => {
       setIsLightboxOpen(false);
       setLightboxImage('');
+      document.body.style.overflow =''
   };
 
   return (
     <>
+      <PageTransition />
       <div className="bg"></div>
       <main>
         {/* Hero section */}
@@ -95,10 +109,7 @@ function CliQQ() {
 
         {/* Problem section */}
         <section className="sections">
-          <div className="sc-containers flex-2">
-            <div className="content">
-              <img src={cliqqimg1} alt="" className='sc-img' />
-            </div>
+          <div className="sc-containers flex-2 row-rev">
             <div className="content">
             <h5 className="d-sm-bold m-bottom-0_25">
                 Problem
@@ -107,16 +118,15 @@ function CliQQ() {
                 The current CliQQ mobile app lacks intuitive navigation, hindering user engagement and satisfaction. A redesign is necessary to improve user experience, streamline flows, and promote active engagement through a visually appealing interface.
               </p>
             </div>
+            <div className="content">
+              <img src={Cliqqimg1} alt="Illustration" className='sc-img' />
+            </div>
           </div>
         </section>
 
         {/* Old design section */}
         <section className="sections">
           <div className="sc-containers flex">
-            <div className="content">
-              <img src={cliqqimg2} alt="" className='sc-img lb-img' onClick={() => handleLightboxOpen(cliqqimg2)} />
-              <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
-            </div>
             <div className="content">
               <h5 className="d-sm-bold m-bottom-0_25">
                 Old design
@@ -131,6 +141,10 @@ function CliQQ() {
                 <br />
                 By examining these old screens, we can identify specific design elements and usability challenges that drove my decision to redesign the CliQQ app.
               </p>
+            </div>
+            <div className="content">
+              <img src={Cliqqimg2} alt="Screen" className='sc-img lb-img' onClick={() => handleLightboxOpen(Cliqqimg2)} />
+              <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
             </div>
           </div>
         </section>
@@ -147,17 +161,14 @@ function CliQQ() {
               </p>
             </div>
             <div className="content">
-              <img src={cliqqimg3} alt="" className='sc-img' />
+              <img src={Cliqqimg3} alt="Illustration" className='sc-img' />
             </div>
           </div>
         </section>
 
         {/* Research section */}
         <section className="sections">
-          <div className="sc-containers flex-2">
-            <div className="content">
-              <img src={cliqqimg4} alt="" className='sc-img' />
-            </div>
+          <div className="sc-containers flex-2 row-rev">
             <div className="content">
               <h5 className="d-sm-bold m-bottom-0_25">
                 Research
@@ -165,6 +176,9 @@ function CliQQ() {
               <p className="t-md-regular">
                 In redesigning the CliQQ mobile app, I analyzed app store feedback and conducted informal usability tests with friends to identify user needs and pain points. This guided the creation of a more user-centered design, with insights shaping key decisions to enhance user experience and effectiveness.
               </p>
+            </div>
+            <div className="content">
+              <img src={Cliqqimg4} alt="" className='sc-img' />
             </div>
           </div>
         </section>
@@ -231,7 +245,7 @@ function CliQQ() {
               </p>
             </div>
             <div className="content">
-              <img src={cliqqimg5} alt="" className='sc-img lb-img' onClick={() => handleLightboxOpen(cliqqimg5)} />
+              <img src={Cliqqimg5} alt="Illustration" className='sc-img lb-img' onClick={() => handleLightboxOpen(Cliqqimg5)} />
               <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
             </div>
           </div>
@@ -249,13 +263,13 @@ function CliQQ() {
               </p>
             </div>
             <div className="content">
-              <img src={cliqqimg6} alt="" className='sc-img' />
+              <img src={Cliqqimg6} alt="Illustration" className='sc-img' />
             </div>
             <div className="content">
               <div className="row1">
                 <div className="col1 flex-row">
                   <div>
-                    <img src={icon1} alt="" className='sc-img icon-img' />
+                    <img src={Icon1} alt="Icon" className='sc-img icon-img' />
                   </div>
                   <div>
                     <p className="t-lg-bold m-bottom-0_75">
@@ -268,7 +282,7 @@ function CliQQ() {
                 </div>
                 <div className="col1 flex-row">
                   <div>
-                    <img src={icon2} alt="" className='sc-img icon-img' />
+                    <img src={Icon2} alt="" className='sc-img icon-img' />
                   </div>
                   <div>
                     <p className="t-lg-bold m-bottom-0_75">
@@ -281,7 +295,7 @@ function CliQQ() {
                 </div>
                 <div className="col1 flex-row">
                   <div>
-                    <img src={icon3} alt="" className='sc-img icon-img' />
+                    <img src={Icon3} alt="" className='sc-img icon-img' />
                   </div>
                   <div>
                     <p className="t-lg-bold m-bottom-0_75">
@@ -294,7 +308,7 @@ function CliQQ() {
                 </div>
                 <div className="col1 flex-row">
                   <div>
-                    <img src={icon4} alt="" className='sc-img icon-img' />
+                    <img src={Icon4} alt="" className='sc-img icon-img' />
                   </div>
                   <div>
                     <p className="t-lg-bold m-bottom-0_75">
@@ -322,7 +336,7 @@ function CliQQ() {
               </p>
             </div>
             <div className="content">
-              <img src={cliqqimg7} alt="" className='sc-img' />
+              <img src={Cliqqimg7} alt="" className='sc-img' />
             </div>
             <p className="t-md-regular">
               Joe and Lala are the energetic and positive characters for the 7 Eleven Cliqq mobile application. Joe, always in a vibrant red t-shirt, has contagious enthusiasm and a can-do attitude, making the Cliqq journey fun and rewarding. Lala, wearing an orange t-shirt, radiates positivity with her bright smile and cheerful demeanor. Together, they guide users through an exciting adventure of convenience and rewards, ensuring a delightful and memorable experience with 7 Eleven Cliqq.
@@ -356,7 +370,7 @@ function CliQQ() {
               </p>
             </div>
             <div className="content">
-              <img src={iphone13} alt="iphone" className='sc-img lb-img' onClick={() => handleLightboxOpen(iphone13)} />
+              <img src={Iphone1} alt="Iphone" className='sc-img lb-img' onClick={() => handleLightboxOpen(Iphone1)} />
               <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
             </div>
           </div>
@@ -364,11 +378,7 @@ function CliQQ() {
 
         {/* Rewards and Gamification section */}
        <section className="sections">
-          <div className="sc-containers flex-2">
-            <div className="content">
-              <img src={iphone16} alt="iphone" className='sc-img lb-img' onClick={() => handleLightboxOpen(iphone16)} />
-              <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
-            </div>
+          <div className="sc-containers flex-2 row-rev">
             <div className="content">
               <h5 className="d-sm-bold m-bottom-0_25">
                 Rewards and Gamification
@@ -376,6 +386,10 @@ function CliQQ() {
               <p className="t-md-regular">
                 I introduced CliQQ Points with a gamified experience, featuring tiers like Bronze, Silver, Gold, and Platinum. As you earn points, you unlock exclusive rewards and benefits, supported by a visually refined interface for a modern and rewarding journey.
               </p>
+            </div>
+            <div className="content">
+              <img src={Iphone2} alt="Iphone" className='sc-img lb-img' onClick={() => handleLightboxOpen(Iphone2)} />
+              <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
             </div>
           </div>
         </section>
@@ -392,7 +406,7 @@ function CliQQ() {
               </p>
             </div>
             <div className="content">
-              <img src={iphone17} alt="iphone" className='sc-img lb-img' onClick={() => handleLightboxOpen(iphone17)} />
+              <img src={Iphone3} alt="Iphone" className='sc-img lb-img' onClick={() => handleLightboxOpen(Iphone3)} />
               <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
             </div>
           </div>
@@ -415,7 +429,21 @@ function CliQQ() {
         <section className="sections">
           <div className="screens-container">
             <div className="content">
-              <img src={screens} alt="" className='sc-img' />
+              <img src={Screen1} alt="Screen" className='sc-img' />
+              <img src={Screen2} alt="Screen" className='sc-img' />
+              <img src={Screen3} alt="Screen" className='sc-img' />
+              <img src={Screen4} alt="Screen" className='sc-img' />
+              <img src={Screen5} alt="Screen" className='sc-img' />
+              <img src={Screen6} alt="Screen" className='sc-img' />
+              <img src={Screen7} alt="Screen" className='sc-img' />
+              <img src={Screen8} alt="Screen" className='sc-img' />
+              <img src={Screen9} alt="Screen" className='sc-img' />
+              <img src={Screen10} alt="Screen" className='sc-img' />
+              <img src={Screen11} alt="Screen" className='sc-img' />
+              <img src={Screen12} alt="Screen" className='sc-img' />
+              <img src={Screen13} alt="Screen" className='sc-img' />
+              <img src={Screen14} alt="Screen" className='sc-img' />
+              <img src={Screen15} alt="Screen" className='sc-img' />
             </div>
           </div>
         </section>
@@ -423,7 +451,7 @@ function CliQQ() {
         {/* Continuing the Journey section */}
         <section className="sections">
           <div className="sc-outer-container-1 flex">
-            <div className="cj-bg mb-1_5 lb-img" onClick={() => handleLightboxOpen(cliqqimg8)}></div>
+            <div className="cj-bg mb-1_5 lb-img" onClick={() => handleLightboxOpen(Cliqqimg8)}></div>
             <LightBox isOpen={isLightboxOpen} image={lightboxImage} onClose={handleCloseLightbox} />
             <div className="sc-inner-container">
               <div className="content">
@@ -434,6 +462,19 @@ function CliQQ() {
                   As I wrap up redesigning the CliQQ mobile app's UI/UX, I'm eager to enhance user experience. Gathering feedback from friends has been invaluable, guiding improvements to ensure a seamless and engaging interface. Moving forward, I plan to continue refining the design based on user insights, focusing on usability and enhancing overall satisfaction. This project marks a milestone in my journey to innovate and elevate CliQQ's UI/UX, reinforcing my commitment to user-centered design and continuous improvement.
                 </p>
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="sections">
+          <div className="sc-containers">
+            <div className="content">
+              <iframe 
+                title="Figma Prototype"
+                style={{ border: '1px solid rgba(0, 0, 0, 0.1)', width: '100%', height: '1000px' }}
+                src="https://www.figma.com/embed?embed_host=share&url=https%3A%2F%2Fwww.figma.com%2Fproto%2Fv5NpeggLrvp6XrNznAQ1hk%2FCliQQ-Prototype%3Fpage-id%3D1604%253A2035%26node-id%3D2059-17195%26viewport%3D8008%252C3509%252C0.6%26t%3DdbVfuTAjtC5Quqvc-1%26scaling%3Dscale-down%26content-scaling%3Dfixed%26starting-point-node-id%3D1935%253A16042" 
+                allowFullScreen 
+              />
             </div>
           </div>
         </section>

@@ -12,6 +12,22 @@ function Test() {
       <div>
         <div className="square" style={{ backgroundColor: color }}></div>
         <input type="text" value={color} onChange={handleColor} placeholder="Enter color" />
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio deleniti, dolorem ipsa tempore maxime quisquam nam nemo perferendis illo cumque ratione reiciendis. Recusandae, maiores cum nemo aspernatur totam minus labore.</p>
       </div>
     );
 }

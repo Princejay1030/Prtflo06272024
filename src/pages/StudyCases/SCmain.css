@@ -132,7 +132,7 @@
 
 /* Custom */
 .cover {
-    background-image: url(../../assets//img//Cover.jpg);
+    background-image: url(../../assets/img/Cover.jpg);
     height: 300px;
     background-position: center;
     background-size: cover;
@@ -148,7 +148,7 @@
 }
 
 .cj-bg {
-    background-image: url(../../assets//img/cliqqimg8.png);
+    background-image: url(../../assets/img/Cliqqimg8.png);
     height: 300px;
     background-position: center;
     background-size: cover;
@@ -162,6 +162,10 @@
 }
 
 @media screen and (min-width: 714px) {
+    .row-rev {
+        flex-direction: row-reverse !important;
+    }
+
     .flex-2 {
         flex-direction: initial;
         align-items: center;

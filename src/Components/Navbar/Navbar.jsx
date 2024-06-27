@@ -8,8 +8,8 @@ import './Navbar.css';
 // Assets
 import Cv from '../../assets/img/Cv2024.349ea563d441f8b475fb.pdf';
 import Logo from '../../assets/img/Logo.svg';
-import openMenuIcon from '../../assets/img/open-menu.svg';
-import closeMenuIcon from '../../assets/img/close-menu.svg';
+import OpenMenu from '../../assets/img/Open.svg';
+import CloseMenu from '../../assets/img/Close.svg';
 
 function Navbar() {
   const email = "jayvincarlismael@gmail.com";
@@ -80,10 +80,10 @@ function Navbar() {
 
           <div className="menu-btn" onClick={toggleMenu}>
             <div className="open-menu" id="openMenu" style={{ display: menuOpen ? 'none' : 'flex' }}>
-              <img src={openMenuIcon} alt="Open Menu" />
+              <img src={OpenMenu} alt="Open" />
             </div>
             <div className="close-menu" id="closeMenu" style={{ display: menuOpen ? 'flex' : 'none' }}>
-              <img src={closeMenuIcon} alt="Close Menu" />
+              <img src={CloseMenu} alt="Close" />
             </div>
           </div>
 
